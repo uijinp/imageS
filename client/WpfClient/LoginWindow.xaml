@@ -46,7 +46,21 @@
                            HorizontalAlignment="Center" Margin="0,0,0,25" Foreground="#333"/>
 
                 <Label Content="Server Address"/>
-                <TextBox x:Name="txtHost" Text="121.78.128.204"/>
+                <Grid>
+                    <TextBox x:Name="txtHost" Panel.ZIndex="1" Background="Transparent"/>
+                    <TextBlock Text="아이피를 넣으시오" Foreground="Gray" Opacity="0.5" VerticalAlignment="Center" Margin="7,0,0,10" IsHitTestVisible="False">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=txtHost}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Grid>
 
                 <Label Content="Port"/>
                 <TextBox x:Name="txtPort" Text="9000"/>
