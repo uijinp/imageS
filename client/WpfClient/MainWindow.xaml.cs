@@ -32,6 +32,7 @@ namespace WpfClient
             _client.OnDrawReceived += Client_OnDrawReceived;
             _client.OnChatReceived += Client_OnChatReceived;
             _client.OnClearReceived += Client_OnClearReceived;
+            _client.OnEndStrokeReceived += Client_OnEndStrokeReceived;
             _client.OnReconnecting += Client_OnReconnecting;
             _client.OnReconnected += Client_OnReconnected;
 
@@ -74,6 +75,7 @@ namespace WpfClient
             {
                 _isDrawing = true;
                 _lastPoint = e.GetPosition(drawCanvas);
+                drawCanvas.CaptureMouse();
             }
         }
 
@@ -100,9 +102,11 @@ namespace WpfClient
             }
         }
 
-        private void DrawCanvas_MouseUp(object sender, MouseButtonEventArgs e)
+        private async void DrawCanvas_MouseUp(object sender, MouseButtonEventArgs e)
         {
             _isDrawing = false;
+            drawCanvas.ReleaseMouseCapture();
+            await _client.SendPacketAsync(PacketType.EndStroke, new byte[0]);
         }
 
         private void DrawLine(Point p1, Point p2, Brush brush)
@@ -134,14 +138,7 @@ namespace WpfClient
 
                 if (_remoteLastPoint.HasValue)
                 {
-                    // Basic stroke separation: if jump is too big, treat as new stroke
-                    // Distance check
-                    double dist = Math.Sqrt(Math.Pow(pScreen.X - _remoteLastPoint.Value.X, 2) + Math.Pow(pScreen.Y - _remoteLastPoint.Value.Y, 2));
-                    
-                    if (dist < 100) // Threshold can be tuned. 100px allows fast movement but breaks teleportation.
-                    {
-                        DrawLine(_remoteLastPoint.Value, pScreen, Brushes.Red);
-                    }
+                    DrawLine(_remoteLastPoint.Value, pScreen, Brushes.Red);
                 }
                 
                 // Draw dot
@@ -167,9 +164,18 @@ namespace WpfClient
             });
         }
 
+        private void Client_OnEndStrokeReceived()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                _remoteLastPoint = null;
+            });
+        }
+
         private async void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             await _client.SendPacketAsync(PacketType.Clear, new byte[0]);
+            Client_OnClearReceived(); // Clear locally immediately
         }
 
 

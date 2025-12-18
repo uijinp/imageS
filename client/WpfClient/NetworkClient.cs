@@ -25,6 +25,7 @@ namespace WpfClient
         public event Action<byte[]> OnDrawReceived;
         public event Action<string> OnChatReceived;
         public event Action OnClearReceived;
+        public event Action OnEndStrokeReceived;
         public event Action OnReconnecting;
         public event Action OnReconnected;
 
@@ -117,6 +118,9 @@ namespace WpfClient
                             break;
                         case PacketType.Clear:
                             OnClearReceived?.Invoke();
+                            break;
+                        case PacketType.EndStroke:
+                            OnEndStrokeReceived?.Invoke();
                             break;
                     }
                 }

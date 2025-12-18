@@ -7,7 +7,8 @@ namespace WpfClient
         Handshake = 0x00,
         Draw = 0x01,
         Chat = 0x02,
-        Clear = 0x03
+        Clear = 0x03,
+        EndStroke = 0x04
     }
 
     public class Protocol
