@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\00.Project\\90.etc\\imageS\\client\\DrawClient\\DrawClient.csproj": {}
+  },
+  "projects": {
+    "D:\\00.Project\\90.etc\\imageS\\client\\DrawClient\\DrawClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\00.Project\\90.etc\\imageS\\client\\DrawClient\\DrawClient.csproj",
+        "projectName": "DrawClient",
+        "projectPath": "D:\\00.Project\\90.etc\\imageS\\client\\DrawClient\\DrawClient.csproj",
+        "packagesPath": "C:\\Users\\uijin\\.nuget\\packages\\",
+        "outputPath": "D:\\00.Project\\90.etc\\imageS\\client\\DrawClient\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\uijin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net47"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net47": {
+            "targetAlias": "net47",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net47": {
+          "targetAlias": "net47",
+          "dependencies": {
+            "System.Resources.Extensions": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

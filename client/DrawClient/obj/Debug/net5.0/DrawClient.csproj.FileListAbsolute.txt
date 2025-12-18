@@ -1,0 +1,16 @@
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\DrawClient.exe
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\DrawClient.deps.json
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\DrawClient.runtimeconfig.json
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\DrawClient.runtimeconfig.dev.json
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\DrawClient.dll
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\ref\DrawClient.dll
+D:\00.Project\90.etc\imageS\client\DrawClient\bin\Debug\net5.0\DrawClient.pdb
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.csproj.AssemblyReference.cache
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.AssemblyInfoInputs.cache
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.AssemblyInfo.cs
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.csproj.CoreCompileInputs.cache
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.dll
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\ref\DrawClient.dll
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.pdb
+D:\00.Project\90.etc\imageS\client\DrawClient\obj\Debug\net5.0\DrawClient.genruntimeconfig.cache

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "EZrcqMaEja5poLTNU9Pc8sAIRazmUxaOe5eQKoAuH178XmyP4PlUcMG4HUbOMq6G+MY92cmePdLnzLARJbMZAA==",
+  "success": true,
+  "projectFilePath": "D:\\00.Project\\90.etc\\imageS\\client\\DrawClient\\DrawClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\uijin\\.nuget\\packages\\microsoft.bcl.hashcode\\6.0.0\\microsoft.bcl.hashcode.6.0.0.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.buffers\\4.6.1\\system.buffers.4.6.1.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.collections.immutable\\10.0.1\\system.collections.immutable.10.0.1.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.formats.nrbf\\10.0.1\\system.formats.nrbf.10.0.1.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.memory\\4.6.3\\system.memory.4.6.3.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.numerics.vectors\\4.6.1\\system.numerics.vectors.4.6.1.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.reflection.metadata\\10.0.1\\system.reflection.metadata.10.0.1.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.resources.extensions\\10.0.1\\system.resources.extensions.10.0.1.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.1.2\\system.runtime.compilerservices.unsafe.6.1.2.nupkg.sha512",
+    "C:\\Users\\uijin\\.nuget\\packages\\system.valuetuple\\4.6.1\\system.valuetuple.4.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}
