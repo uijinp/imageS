@@ -1,0 +1,64 @@
+<Window x:Class="WpfClient.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="520" Width="380"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Background="#F0F2F5" FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,5,0,15"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#DDD"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#555"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#006ABC"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Card Container -->
+        <Border Background="White" CornerRadius="10" Margin="25" Padding="25">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.1"/>
+            </Border.Effect>
+
+            <StackPanel VerticalAlignment="Center" Margin="-0.333,-10.333,0,-8.667">
+                <TextBlock Text="Draw Client" FontSize="24" FontWeight="Bold" 
+                           HorizontalAlignment="Center" Margin="0,0,0,25" Foreground="#333"/>
+
+                <Label Content="Server Address"/>
+                <TextBox x:Name="txtHost" Text="121.78.128.204"/>
+
+                <Label Content="Port"/>
+                <TextBox x:Name="txtPort" Text="9000"/>
+
+                <Label Content="Room ID"/>
+                <TextBox x:Name="txtRoom" Text="Room1"/>
+
+                <Label Content="Nickname"/>
+                <TextBox x:Name="txtNick"/>
+
+                <Button x:Name="btnConnect" Content="Connect" Click="BtnConnect_Click" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
