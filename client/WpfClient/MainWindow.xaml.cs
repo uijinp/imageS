@@ -134,8 +134,14 @@ namespace WpfClient
 
                 if (_remoteLastPoint.HasValue)
                 {
-                    // Draw red line for remote
-                    DrawLine(_remoteLastPoint.Value, pScreen, Brushes.Red);
+                    // Basic stroke separation: if jump is too big, treat as new stroke
+                    // Distance check
+                    double dist = Math.Sqrt(Math.Pow(pScreen.X - _remoteLastPoint.Value.X, 2) + Math.Pow(pScreen.Y - _remoteLastPoint.Value.Y, 2));
+                    
+                    if (dist < 100) // Threshold can be tuned. 100px allows fast movement but breaks teleportation.
+                    {
+                        DrawLine(_remoteLastPoint.Value, pScreen, Brushes.Red);
+                    }
                 }
                 
                 // Draw dot

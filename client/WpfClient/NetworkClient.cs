@@ -49,7 +49,8 @@ namespace WpfClient
         private async Task ConnectInternalAsync()
         {
             _client = new TcpClient();
-            await _client.ConnectAsync(_host, _port);
+            _client.NoDelay = true; // Reduce latency
+            await _client.ConnectAsync(_host, _port).ConfigureAwait(false);
             _stream = _client.GetStream();
 
             Console.WriteLine($"Connected to {_host}:{_port}");
@@ -58,7 +59,7 @@ namespace WpfClient
             if (!string.IsNullOrEmpty(_lastRoomId))
             {
                 byte[] roomBytes = Encoding.UTF8.GetBytes(_lastRoomId);
-                await SendRawAsync(Protocol.CreatePacket(PacketType.Handshake, roomBytes));
+                await SendRawAsync(Protocol.CreatePacket(PacketType.Handshake, roomBytes)).ConfigureAwait(false);
             }
         }
 
@@ -74,7 +75,7 @@ namespace WpfClient
             {
                 if (_stream != null)
                 {
-                    await _stream.WriteAsync(packet, 0, packet.Length);
+                    await _stream.WriteAsync(packet, 0, packet.Length).ConfigureAwait(false);
                 }
             }
             catch (Exception ex)
@@ -177,7 +178,7 @@ namespace WpfClient
             while (offset < count)
             {
                 if (_stream == null) return false;
-                int read = await _stream.ReadAsync(buffer, offset, count - offset, token);
+                int read = await _stream.ReadAsync(buffer, offset, count - offset, token).ConfigureAwait(false);
                 if (read == 0) return false;
                 offset += read;
             }

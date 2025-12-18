@@ -14,3 +14,4 @@ D:\project\buj\anti\client\WpfClient\obj\Debug\net472\WpfClient.AssemblyInfo.cs
 D:\project\buj\anti\client\WpfClient\obj\Debug\net472\WpfClient.csproj.CoreCompileInputs.cache
 D:\project\buj\anti\client\WpfClient\obj\Debug\net472\WpfClient.exe
 D:\project\buj\anti\client\WpfClient\obj\Debug\net472\WpfClient.pdb
+D:\project\buj\anti\client\WpfClient\obj\Debug\net472\WpfClient.csproj.AssemblyReference.cache
