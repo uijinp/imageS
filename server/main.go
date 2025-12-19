@@ -35,6 +35,7 @@ func main() {
 			Conn:   conn,
 			Server: server,
 			Send:   make(chan []byte, 256),
+			Stop:   make(chan struct{}),
 		}
 
 		// server.Register <- client

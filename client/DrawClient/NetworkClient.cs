@@ -70,17 +70,10 @@ namespace DrawClient
 
         private async Task SendRawAsync(byte[] packet)
         {
-            try 
+            // Propagate exception so callers know if send failed
+            if (_stream != null)
             {
-                if (_stream != null)
-                {
-                    await _stream.WriteAsync(packet, 0, packet.Length);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Send error: {ex.Message}");
-                // Send error usually implies connection issue, listener will catch it or next read will fail.
+                await _stream.WriteAsync(packet, 0, packet.Length);
             }
         }
 
@@ -132,6 +125,8 @@ namespace DrawClient
                 // Trigger Reconnect if not explicit disconnect
                 if (!_isExplicitDisconnect && AutoReconnect)
                 {
+                    // Prevent tight loop thrashing
+                    await Task.Delay(2000);
                     await ReconnectLoopAsync();
                 }
             }
